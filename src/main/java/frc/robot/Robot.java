@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.;
 
 import java.sql.Driver;
 
@@ -25,6 +27,7 @@ public class Robot extends TimedRobot {
   DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
   Joystick DriverController = new Joystick(0);
   Timer m_timer = new Timer();
+  PIDController pid = new PIDController(kP, kI, dD)
 
   // Constants for arm (will need to tune)
   final double armHoldUp = 0.08;
@@ -85,7 +88,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during teleoperated mode. */
   @Override
   public void teleopPeriodic() {
-    // This contols the drive
+    // This controls the drive
     m_robotDrive.arcadeDrive(DriverController.getY(), DriverController.getX());
 
     // Intake Controls

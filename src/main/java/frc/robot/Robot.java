@@ -12,6 +12,8 @@ import java.sql.Driver;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMax.IdleMode;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.CANEncoder;
+import com.revrobotics.CANPIDController;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -28,6 +30,7 @@ public class Robot extends TimedRobot {
   Joystick DriverController = new Joystick(0);
   Timer m_timer = new Timer();
   PIDController pid = new PIDController(kP, kI, dD)
+  CANEncoder arm 
 
   // Constants for arm (will need to tune)
   final double armHoldUp = 0.08;
